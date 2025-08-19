@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap');
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+
+    /* Font */
+    --font-nunito-sans: 'Nunito Sans', sans-serif;
+
+    /* Colors */
+    /* (Dark Mode Elements) */
+    --color-blue-900: hsl(209, 23%, 22%);
+    /* (Dark Mode Background) */
+    --color-blue-950: hsl(207, 26%, 17%);
+    /* (Light Mode Text) */
+    --color-grey-950: hsl(200, 15%, 8%);
+    /* (Light Mode Input) */
+    --color-grey-400: hsl(0, 0%, 50%);
+    /* (Light Mode Background) */
+    --color-grey-50: hsl(0, 0%, 99%);
+}
+
+@layer base {
+    body {
+        @apply w-full min-h-screen font-nunito-sans bg-grey-50 dark:bg-blue-950 transition-colors duration-500;
+    }
+}
+
+@layer utilies {
+    .filter-dropdown-active {
+        @apply opacity-100 pointer-events-auto;
+    }
+}
+
+@layer components {
+    .header {
+        @apply w-full h-20 flex items-center justify-between px-6 md:px-16 shadow-lg bg-white dark:bg-blue-900 transition-colors duration-500;
+
+        h1 {
+            @apply font-black text-sm md:text-xl text-grey-950 dark:text-white;
+        }
+
+        .toggle-theme-button {
+            @apply w-fit flex items-center gap-2 px-2 py-1.5 md:px-4 md:py-3 rounded-md hover:bg-gray-200 hover:dark:bg-blue-950/60 cursor-pointer transition;
+
+            .icon {
+                @apply size-4 sm:size-5 text-grey-950 dark:text-white;
+            }
+
+            p {
+                @apply text-sm font-semibold sm:text-[16px] text-grey-950 dark:text-white;
+            }
+
+        }
+    }
+
+    .content-section {
+        @apply w-full h-full p-6 md:px-16 md:py-12;
+
+        .actions-section {
+            @apply w-full flex flex-col gap-10 md:flex-row md:items-center md:justify-between lg:gap-0;
+
+            .search-input-container {
+                @apply w-full lg:max-w-[480px] h-14 flex items-center px-8 gap-4 shadow-[0px_2px_17px_2px_rgba(0,_0,_0,_0.1)] bg-white dark:bg-blue-900 rounded-md transition-colors duration-500;
+
+                .search-input-icon {
+                    @apply size-5 text-grey-400 dark:text-white;
+                }
+                
+                .search-input {
+                    @apply w-full h-full text-sm border-none outline-none pr-4 bg-transparent dark:text-white dark:placeholder:text-white;
+                }
+
+            }
+
+            .filter-select-container {
+                @apply relative w-full max-w-[240px] lg:max-w-[200px] h-14 px-8 lg:px-4 gap-4 shadow-[0px_2px_17px_2px_rgba(0,_0,_0,_0.1)] bg-white dark:bg-blue-900 rounded-md z-50 transition-colors duration-500;
+
+                .filter-select-trigger {
+                    @apply w-full h-full flex items-center justify-between cursor-pointer;
+
+                    p {
+                        @apply text-[15px] text-grey-950 dark:text-white;
+                    }
+
+                    .filter-icon {
+                        @apply size-5 text-grey-950 dark:text-white;
+                    }
+
+                }
+
+                .filter-options-dropdown {
+                    @apply absolute w-full flex flex-col gap-1 top-16 left-0 rounded-md px-6 py-4 lg:px-2 opacity-0 pointer-events-none shadow-[0px_2px_17px_2px_rgba(0,_0,_0,_0.1)] transition duration-500 bg-white dark:bg-blue-900;
+
+                    .filter-option {
+                        @apply w-full cursor-pointer p-2 lg:px-2 text-[15px] dark:text-white rounded-md hover:bg-gray-200 hover:dark:bg-blue-950/60 transition-colors duration-300;
+                    }
+
+                }
+
+            }
+
+        }
+
+        .countries-grid {
+            @apply w-full h-full pt-10 md:pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 place-items-center md:place-items-start;
+
+            .country-card {
+                @apply w-[280px] min-h-[400px] md:w-full lg:w-full flex flex-col rounded-md shadow-[0px_2px_17px_2px_rgba(0,_0,_0,_0.1)] transition-colors duration-500 bg-white dark:bg-blue-900;
+
+                .empty-image {
+                    @apply w-full h-[190px] rounded-t-md flex items-center justify-center border-none outline-none bg-gray-200;
+
+                    p {
+                        @apply font-bold;
+                    }
+                }
+
+                .country-image {
+                    @apply w-full rounded-t-md object-cover h-[190px] border-none outline-none;
+                }
+
+                .country-card-info {
+                    @apply w-full p-6 flex flex-col gap-4 text-left overflow-x-hidden;
+
+                    h2 {
+                        @apply w-full font-bold text-left lg:text-lg truncate dark:text-white;
+                    }
+
+                    .country-description {
+                        @apply flex flex-col gap-1;
+
+                        p {
+                            @apply text-sm lg:text-[15px] dark:text-white;
+
+                            span {
+                                @apply font-bold;
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
