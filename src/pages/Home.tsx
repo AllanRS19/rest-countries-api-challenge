@@ -25,19 +25,21 @@ const Home = () => {
     return (
         <section className="content-section">
             <ActionsSection />
-            <section className="countries-grid">
-                {countries.length > 0 ? countries.map((country: CountryCardProps) => (
-                    <CountryCard
-                        key={country.name}
-                        alpha3Code={country.alpha3Code}
-                        flag={country.flag}
-                        name={country.name}
-                        population={country.population}
-                        region={country.region}
-                        capital={country.capital}
-                    />
-                )) : <Loading />}
-            </section>
+            {countries.length > 0 ? (
+                <section className="countries-grid">
+                    {countries.map((country: CountryCardProps) => (
+                        <CountryCard
+                            key={country.name}
+                            alpha3Code={country.alpha3Code}
+                            flag={country.flag}
+                            name={country.name}
+                            population={country.population}
+                            region={country.region}
+                            capital={country.capital}
+                        />
+                    ))}
+                </section>
+            ) : <Loading />}
         </section>
     )
 }

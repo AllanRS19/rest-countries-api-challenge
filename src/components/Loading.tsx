@@ -1,6 +1,13 @@
+import { RefreshCw } from "lucide-react";
+
 const Loading = () => {
     return (
-        <div className="text-3xl dark:text-white">Fetching data...</div>
+        <section className="loading-container">
+            <div className="loading-wrapper">
+                <RefreshCw className="loading-icon" />
+                <p>Loading your data...</p>
+            </div>
+        </section>
     )
 }
 
