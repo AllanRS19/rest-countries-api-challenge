@@ -12,6 +12,7 @@ const Home = () => {
 
     useEffect(() => {
         const fetchCountries = async () => {
+            await new Promise((resolve) => setTimeout(resolve, 500));
             const options = {
                 regionFilter: searchParams.get("filter") as string || "",
                 searchFilter: searchParams.get("search") as string || ""
