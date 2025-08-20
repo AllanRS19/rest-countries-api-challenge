@@ -19,6 +19,10 @@
     --color-grey-400: hsl(0, 0%, 50%);
     /* (Light Mode Background) */
     --color-grey-50: hsl(0, 0%, 99%);
+
+    /* Shadow */
+    --shadow-light-mode: 0px 2px 17px 2px rgba(0,0,0,0.1);
+    --shadow-dark-mode: 0px 2px 17px -4px #050e17;
 }
 
 @layer base {
@@ -62,7 +66,7 @@
             @apply w-full flex flex-col gap-10 md:flex-row md:items-center md:justify-between lg:gap-0;
 
             .search-input-container {
-                @apply w-full lg:max-w-[480px] h-14 flex items-center px-8 gap-4 shadow-[0px_2px_17px_2px_rgba(0,_0,_0,_0.1)] bg-white dark:bg-blue-900 rounded-md transition-colors duration-500;
+                @apply w-full lg:max-w-[480px] h-14 flex items-center px-8 gap-4 shadow-light-mode dark:shadow-dark-mode bg-white dark:bg-blue-900 rounded-md transition-colors duration-500;
 
                 .search-input-icon {
                     @apply size-5 text-grey-400 dark:text-white;
@@ -75,7 +79,7 @@
             }
 
             .filter-select-container {
-                @apply relative w-full max-w-[240px] lg:max-w-[200px] h-14 px-8 lg:px-4 gap-4 shadow-[0px_2px_17px_2px_rgba(0,_0,_0,_0.1)] bg-white dark:bg-blue-900 rounded-md z-50 transition-colors duration-500;
+                @apply relative w-full max-w-[240px] lg:max-w-[200px] h-14 px-8 lg:px-4 gap-4 shadow-light-mode dark:shadow-dark-mode bg-white dark:bg-blue-900 rounded-md z-50 transition-colors duration-500;
 
                 .filter-select-trigger {
                     @apply w-full h-full flex items-center justify-between cursor-pointer;
@@ -91,7 +95,7 @@
                 }
 
                 .filter-options-dropdown {
-                    @apply absolute w-full flex flex-col gap-1 top-16 left-0 rounded-md px-6 py-4 lg:px-2 opacity-0 pointer-events-none shadow-[0px_2px_17px_2px_rgba(0,_0,_0,_0.1)] transition duration-500 bg-white dark:bg-blue-900;
+                    @apply absolute w-full flex flex-col gap-1 top-16 left-0 rounded-md px-6 py-4 lg:px-2 opacity-0 pointer-events-none shadow-light-mode transition duration-500 bg-white dark:bg-blue-900;
 
                     .filter-option {
                         @apply w-full cursor-pointer p-2 lg:px-2 text-[15px] dark:text-white rounded-md hover:bg-gray-200 hover:dark:bg-blue-950/60 transition-colors duration-300;
@@ -107,7 +111,7 @@
             @apply w-full h-full pt-10 md:pt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-16 place-items-center md:place-items-start;
 
             .country-card {
-                @apply w-[280px] min-h-[400px] md:w-full lg:w-full flex flex-col rounded-md shadow-[0px_2px_17px_2px_rgba(0,_0,_0,_0.1)] transition-colors duration-500 bg-white dark:bg-blue-900;
+                @apply w-[280px] min-h-[400px] md:w-full lg:w-full flex flex-col rounded-md shadow-light-mode dark:shadow-dark-mode transition-colors duration-500 bg-white dark:bg-blue-900 overflow-hidden;
 
                 .empty-image {
                     @apply w-full h-[190px] rounded-t-md flex items-center justify-center border-none outline-none bg-gray-200;
@@ -142,6 +146,71 @@
                 }
 
             }
+        }
+    }
+
+    .country-page {
+        @apply w-full h-full p-6 md:px-16 md:py-12;
+
+        .back-button {
+            @apply w-fit flex items-center justify-center gap-2 px-8 py-2 rounded-sm shadow-light-mode dark:shadow-dark-mode bg-white dark:bg-blue-900 dark:text-white hover:bg-gray-100 hover:dark:bg-blue-950/60 mt-6 transition-all duration-500;
+        }
+
+        .country-info-section {
+            @apply w-full mt-20 pb-8 grid grid-cols-1 place-items-center md:place-items-start;
+
+            .country-info-wrapper {
+                @apply w-full flex flex-col xl:flex-row xl:items-center xl:justify-between gap-12;
+                
+                img {
+                    @apply w-full aspect-video xl:flex-1 xl:h-[400px] xl:max-w-[600px];
+                }
+
+                .country-info {
+                    @apply w-full xl:flex-1 xl:ml-16;
+
+                    .country-name {
+                        @apply text-2xl lg:text-4xl font-black mb-8 dark:text-white;
+                    }
+
+                    .country-info-inner {
+                        @apply w-full flex flex-col xl:flex-row gap-10 xl:gap-4 2xl:gap-28;
+                        
+                        .country-subcontent {
+                            @apply flex flex-col gap-1;
+                        }
+
+                        p {
+                            @apply dark:text-[#dee3e4] font-light;
+                            span {
+                                @apply font-bold text-[16px];
+                            }
+                        }
+                    }
+
+                    .border-countries {
+                        @apply w-full flex flex-col gap-4 xl:flex-row xl:items-center mt-10 xl:mt-20;
+
+                        h2 {
+                            @apply flex-1 text-lg xl:text-sm xl:text-nowrap font-bold dark:text-white;
+                        }
+
+                        .border-countries-wrapper {
+                            @apply w-full flex flex-wrap gap-4 justify-center xl:justify-start;
+
+                            .country-link,
+                            p {
+                                @apply flex items-center justify-center text-sm flex-1 xl:flex-none shadow-light-mode dark:shadow-dark-mode text-center px-3 xl:px-6 py-2 xl:py-1 rounded-sm bg-white dark:bg-blue-900 dark:text-white transition-all duration-500;
+                            }
+
+                            .country-link {
+                                @apply cursor-pointer border-none outline-none hover:bg-gray-100 hover:dark:bg-blue-950/60;
+                            }
+                        }
+                    }
+                }
+            }
+
         }
     }
 }

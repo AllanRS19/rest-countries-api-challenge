@@ -1,11 +1,15 @@
 export const filterSelectOptions: FilterOptions[] = [
     {
+        label: "Show All",
+        filterValue: "all"
+    },
+    {
         label: "Africa",
         filterValue: "africa"
     },
     {
-        label: "America",
-        filterValue: "america"
+        label: "Americas",
+        filterValue: "americas"
     },
     {
         label: "Asia",

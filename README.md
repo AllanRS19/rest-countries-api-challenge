@@ -1,69 +1,76 @@
-# React + TypeScript + Vite
+# Frontend Mentor - REST Countries API with color theme switcher solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
-Currently, two official plugins are available:
+This solution was built and coded by [Allan Romero](https://github.com/AllanRS19)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Table of contents
 
-## Expanding the ESLint configuration
+- [The challenge](#the-challenge)
+- [Screenshot](#screenshot)
+- [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### The challenge
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+Users should be able to:
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+- See all countries from the API on the homepage
+- Search for a country using an `input` field
+- Filter countries by region
+- Click on a country to see more detailed information on a separate page
+- Click through to the border countries on the detail page
+- Toggle the color scheme between light and dark mode *(optional)*
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Screenshot
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+#### Desktop
+![](/public/screenshots/desktop-screenshot-1.png)
+![](/public/screenshots/desktop-screenshot-2.png)
+![](/public/screenshots/desktop-screenshot-3.png)
+![](/public/screenshots/desktop-screenshot-4.png)
+![](/public/screenshots/desktop-screenshot-5.png)
+![](/public/screenshots/desktop-screenshot-6.png)
+![](/public/screenshots/desktop-screenshot-7.png)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+#### Mobile
+![](/public/screenshots/mobile-screenshot-1.png)
+![](/public/screenshots/mobile-screenshot-2.png)
+![](/public/screenshots/mobile-screenshot-3.png)
+![](/public/screenshots/mobile-screenshot-4.png)
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+### Links
+
+- Solution URL: [https://github.com/AllanRS19/rest-countries-api-challenge](https://github.com/AllanRS19/rest-countries-api-challenge)
+- Live Site URL: [https://ecommerce-product-page-six-lime.vercel.app/](https://ecommerce-product-page-six-lime.vercel.app/)
+
+## My process
+
+### Built with
+
+- [Vite](https://vite.dev/guide/) - Build Tool and Development Server
+- [React](https://reactjs.org/) - JS Library For UI
+- [TailwindCSS](https://tailwindcss.com/docs/installation/using-vite) - Utility-first CSS Framework
+- [React Router](https://reactrouter.com/home) - Router for React
+- Flexbox
+- Grid
+- Mobile-first workflow
+
+### What I learned
+
+During this project, I learned how to follow a Mobile-first workflow to design responsive UIs. Additionally, I was able to resolve a few issues related to positioning elements using Grid and Flex properties. This helped me to have a better understading of how these classes work and to keep the best size for each screen and device. I put into practice my skills and developed my own reusable function to fetch data from the API endpoint depending on the needs.
+
+### Useful resources
+
+- [Vite Documentation](https://vite.dev/guide/) - This is the Vite documentation page, which is what I used to develop this application. In there, I was able to gather and search all the information that I needed to succeed in this challenge.
+- [TailwindCSS Documentation](https://tailwindcss.com/docs/installation/using-vite) - This is by far my preferred CSS framework to style my applications. I used the guide to enable the dark mode feature.
+- [React Router](https://reactrouter.com/home) - This is the tool I used to navigate through the different pages of my app. I found it very easy to use and implement and it contains some built-in methods, which simply getting access to some data.
+
+## Author
+
+- Frontend Mentor - [@AllanRS19](https://www.frontendmentor.io/profile/AllanRS19)
+- GitHub - [AllanRS19](https://github.com/AllanRS19)

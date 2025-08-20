@@ -1,6 +1,8 @@
-const CountryCard = ({ flag, name, population, region, capital, }: CountryCardProps) => {
+import { Link } from "react-router";
+
+const CountryCard = ({ alpha3Code: alphaCode, flag, name, population, region, capital, }: CountryCardProps) => {
     return (
-        <div className="country-card">
+        <Link className="country-card" to={`/country/${alphaCode}`}>
             {flag ? (
                 <img src={flag} alt={name} className="country-image" />
             ) : (
@@ -22,7 +24,7 @@ const CountryCard = ({ flag, name, population, region, capital, }: CountryCardPr
                     </p>
                 </div>
             </article>
-        </div>
+        </Link>
     )
 }
 
