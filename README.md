@@ -46,7 +46,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [https://github.com/AllanRS19/rest-countries-api-challenge](https://github.com/AllanRS19/rest-countries-api-challenge)
-- Live Site URL: [https://ecommerce-product-page-six-lime.vercel.app/](https://ecommerce-product-page-six-lime.vercel.app/)
+- Live Site URL: [https://rest-countries-api-challenge-zeta.vercel.app/](https://rest-countries-api-challenge-zeta.vercel.app/)
 
 ## My process
 
